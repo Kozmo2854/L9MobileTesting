@@ -30,7 +30,7 @@ describe("TIIM", function () {
         expect((loginPage.emailError).getText()).toBe(loginPage.emailErrorMsg);
     });
 
-    it("Should login succesfully", function () {
+    fit("Should login succesfully", function () {
 
         loginPage.emailInput.clear().then(function(){
             loginPage.fillLoginForm(loginPage.validEmail,loginPage.validPassword);

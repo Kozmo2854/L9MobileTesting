@@ -1,6 +1,6 @@
 exports.config = {
     seleniumAddress: "http://localhost:4723/wd/hub",
-    specs: ["specs/forgotPasswordSpec.js","specs/loginPageSpec.js"],
+    specs: ["specs/loginPageSpec.js","specs/mainPageSpec.js"],
   
     // Reference: https://github.com/appium/sample-code/blob/master/sample-code/examples/node/helpers/caps.js
     capabilities: {
