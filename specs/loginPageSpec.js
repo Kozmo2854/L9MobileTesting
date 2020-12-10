@@ -1,8 +1,10 @@
+const ForgotPasswordPage = require("../PageObjectModels/forgotPasswordPage.js");
 var LoginPageRef = require("../PageObjectModels/loginPage.js");
 var MainPageRef = require("../PageObjectModels/mainPage.js");
 
 let loginPage = new LoginPageRef();
 let mainPage = new MainPageRef();
+let forgotPasswordPage = new ForgotPasswordPage();
 
 let EC = protractor.ExpectedConditions;
 
@@ -25,7 +27,7 @@ describe("TIIM", function () {
     it("Should display error message for invalid email adress", function () {
         loginPage.emailInput.sendKeys(loginPage.badEmailFormat);
 
-        expect((loginPage.emailError).getText()).toBe('Please enter a valid email address');
+        expect((loginPage.emailError).getText()).toBe(loginPage.emailErrorMsg);
     });
 
     it("Should login succesfully", function () {

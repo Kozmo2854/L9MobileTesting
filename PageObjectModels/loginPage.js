@@ -39,17 +39,20 @@ var LoginPage = function () {
   this.fakePassword = '54321'
 
   this.badEmailFormat = 'randomEmail'
-  
 
+  this.emailErrorMsg = 'Please enter a valid email address'
+  
 
   this.emailInput = $("input[name='email']");
   this.passwordInput = $("input[name='password']");
 
-  this.forgotPassword = $$('.ion-activatable.button-clear').last();
+  this.forgotPasswordButton = $$('.ion-activatable.button-clear').last();
   this.loginButton = $('.ion-color.ion-color-primary.md.button');
 
   this.userDoesntExistError = $('.md.ion-color.ion-color-danger.hydrated')
   this.emailError = $('div.input-error');
+  this.resetPasswordNotice = $('div.ion-padding-vertical');
+  
 
   this.fillLoginForm = function(email,pass){
     this.emailInput.sendKeys(email)
