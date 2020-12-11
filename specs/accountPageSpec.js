@@ -26,7 +26,6 @@ describe("TIIM", function () {
 
         expect(accountPage.firstNameValue.getAttribute("ng-reflect-model")).toEqual(accountPage.newFirstName+currentTime)
         expect(accountPage.lastNameValue.getAttribute("ng-reflect-model")).toEqual(accountPage.newFirstName+currentTime)
-
         
     })
 

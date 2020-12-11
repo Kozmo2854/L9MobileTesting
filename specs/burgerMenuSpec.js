@@ -25,6 +25,7 @@ describe("TIIM", function () {
     require("./accountPageSpec.js")
 
     it("Should open the settings page",function(){
+        browser.navigate().back();
         mainPage.burgerMenu.click()
         burgerMenuPage.SettingsButton.click();
         expect(settingsPage.appLanguageEng.isPresent()).toBe(true)
@@ -33,7 +34,8 @@ describe("TIIM", function () {
     require("./settingsPageSpec.js")
 
     it("Should log out", function(){
-        mainPage.burgerMenu.click();
+        browser.navigate().back()
+        mainPage.burgerMenu.click()
         burgerMenuPage.LogOut.click();
         
         browser.wait(EC.presenceOf(loginPage.emailInput),15000)
