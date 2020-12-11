@@ -12,18 +12,22 @@ describe("TIIM", function () {
         expect(fullName).toEqual(expectedFullName);
     })
 
-    fit("Should change first and last name", function(){
+    it("Should change first and last name", function(){
+            
+        let currentTime = new Date().toJSON().replace(/-|T|Z|:/g,'').slice(8,14);
 
         accountPage.firstNameInput.clear()
         accountPage.lastNameInput.clear()
 
-        accountPage.firstNameInput.sendKeys("test")
-        accountPage.lastNameInput.sendKeys("testovic")
+        accountPage.firstNameInput.sendKeys(accountPage.newFirstName+currentTime)
+        accountPage.lastNameInput.sendKeys(accountPage.newFirstName+currentTime)
 
         accountPage.submitButton.click()
 
-        expect(accountPage.firstNameValue.getAttribute("ng-reflect-model")).toEqual("test")
-        expect(accountPage.lastNameValue.getAttribute("ng-reflect-model")).toEqual("testovic")
+        expect(accountPage.firstNameValue.getAttribute("ng-reflect-model")).toEqual(accountPage.newFirstName+currentTime)
+        expect(accountPage.lastNameValue.getAttribute("ng-reflect-model")).toEqual(accountPage.newFirstName+currentTime)
+
+        
     })
 
 });

@@ -8,6 +8,8 @@ var BurgerMenu = function(){
     this.firstNameValue = $("ion-input#firstName")
     this.lastNameValue = $("ion-input#lastName")
 
+    this.newFirstName = "Petar"
+    this.newLastName = "Petrovic"
 }
 module.exports = BurgerMenu;
 

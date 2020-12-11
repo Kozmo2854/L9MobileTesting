@@ -10,27 +10,27 @@ let EC = protractor.ExpectedConditions;
 
 describe("TIIM", function () {
 
-    it("Should not login because of invalid email", function () {
+    xit("Should not login because of invalid email", function () {
         loginPage.fillLoginForm(loginPage.fakeEmail,loginPage.validPassword);
 
         browser.wait(EC.presenceOf(loginPage.userDoesntExistError),15000)
         expect((loginPage.userDoesntExistError).isPresent()).toBe(true);
     });
 
-    it("Should not login because of invalid pass", function () {
+    xit("Should not login because of invalid pass", function () {
         loginPage.fillLoginForm(loginPage.validEmail,loginPage.fakePassword);
 
         browser.wait(EC.presenceOf(loginPage.userDoesntExistError),15000)
         expect((loginPage.userDoesntExistError).isPresent()).toBe(true);
     });
 
-    it("Should display error message for invalid email adress", function () {
+    xit("Should display error message for invalid email adress", function () {
         loginPage.emailInput.sendKeys(loginPage.badEmailFormat);
 
         expect((loginPage.emailError).getText()).toBe(loginPage.emailErrorMsg);
     });
 
-    fit("Should login succesfully", function () {
+    it("Should login succesfully", function () {
 
         loginPage.emailInput.clear().then(function(){
             loginPage.fillLoginForm(loginPage.validEmail,loginPage.validPassword);
